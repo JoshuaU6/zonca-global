@@ -17,6 +17,96 @@ export default function Projects() {
     { img: '/images/projects/project-hayat.jpg',       titleKey: 'projects.p9.title', categoryKey: 'projects.p9.category', location: 'Lagos, Nigeria' },
   ];
 
+  const tripoliImages = [
+    '/images/projects/Tripoli/IMG-20260605-WA0012.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0014.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0015.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0017.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0018.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0019.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0020.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0021.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0022.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0023.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0024.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0025.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0026.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0027.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0028.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0029.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0030.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0031.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0032.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0033.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0034.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0035.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0036.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0037.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0038.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0039.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0040.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0041.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0042.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0043.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0044.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0045.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0046.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0047.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0048.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0049.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0050.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0051.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0052.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0053.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0054.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0055.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0056.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0057.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0058.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0059.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0060.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0061.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0062.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0063.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0064.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0065.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0066.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0067.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0068.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0069.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0070.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0071.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0072.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0073.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0074.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0075.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0076.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0077.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0078.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0079.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0080.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0081.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0082.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0083.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0084.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0085.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0086.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0087.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0088.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0089.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0090.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0091.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0092.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0093.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0094.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0095.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0096.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0097.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0098.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0099.jpg',
+    '/images/projects/Tripoli/IMG-20260605-WA0100.jpg',
+  ];
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-grow pt-20 md:pt-24 pb-16 md:pb-20">
@@ -64,7 +154,7 @@ export default function Projects() {
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
                       src={project.img}
-                      alt={project.title}
+                      alt={t(project.titleKey)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
@@ -79,6 +169,37 @@ export default function Projects() {
                       {t(project.titleKey)}
                     </h3>
                     <p className="text-muted-foreground text-xs md:text-sm">{project.location}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tripoli - Mall Design Gallery */}
+        <section className="py-10 md:py-20">
+          <div className="container px-4 md:px-6">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold">Mall Design by Zonca & Fargo in Tripoli, Libya</h2>
+              <p className="text-muted-foreground mt-2">A selection of images from the Tripoli mall project.</p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {tripoliImages.map((src, idx) => (
+                <motion.div
+                  key={src}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.01 }}
+                  className="overflow-hidden border border-border group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={src}
+                      alt={`Mall Design Tripoli ${idx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                 </motion.div>
               ))}
