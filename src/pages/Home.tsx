@@ -4,6 +4,8 @@ import { Link } from 'wouter';
 import { ArrowRight, Maximize2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCountUp } from '../hooks/useCountUp';
+import { OptimizedImage } from '../components/OptimizedImage';
+import { OptimizedVideo } from '../components/OptimizedVideo';
 
 const SERVICE_ITEMS = [
   { key: 'aluminum',             img: '/images/service-aluminum.webp' },
@@ -45,15 +47,16 @@ export default function Home() {
         {/* Hero */}
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <picture>
-              <source srcSet="/images/hero.webp" type="image/webp" />
-              <img
-                src="/images/hero-new.webp"
-                alt="Architectural Glass Building"
-                className="w-full h-full object-cover object-center"
-                fetchPriority="high"
-              />
-            </picture>
+            <OptimizedImage
+              src="/images/hero.webp"
+              alt="Architectural Glass Building"
+              priority={true}
+              className="w-full h-full"
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
           </div>
 
@@ -116,7 +119,7 @@ export default function Home() {
                   className="group relative overflow-hidden border border-border hover:border-primary/50 transition-colors"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={svc.img}
                       alt={t(`services.${svc.key}.title` as any)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -171,11 +174,10 @@ export default function Home() {
                   className="flex-shrink-0 flex items-center justify-center bg-white border border-border/20 hover:border-primary/40 transition-colors cursor-default"
                   style={{ width: '160px', height: '80px', padding: '12px 16px' }}
                 >
-                  <img
+                  <OptimizedImage
                     src={client.img}
                     alt={client.name}
                     className="w-full h-full object-contain"
-                    draggable={false}
                   />
                 </div>
               ))}
@@ -211,14 +213,13 @@ export default function Home() {
                   className="group relative overflow-hidden border border-border hover:border-primary/50 transition-colors bg-secondary"
                 >
                   <div className="aspect-video overflow-hidden">
-                    <video
+                    <OptimizedVideo
                       src={v.src}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       autoPlay
                       muted
                       loop
                       playsInline
-                      preload="none"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-between">

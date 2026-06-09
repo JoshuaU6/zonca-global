@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -152,7 +153,7 @@ export default function Projects() {
                   className="group relative overflow-hidden border border-border"
                 >
                   <div className="aspect-[16/10] overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={project.img}
                       alt={t(project.titleKey)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -195,7 +196,7 @@ export default function Projects() {
                   className="overflow-hidden border border-border group"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={src}
                       alt={`Mall Design Tripoli ${idx + 1}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { Building2, Layers, Maximize, Sun, Hammer, ShieldCheck } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export function Services() {
   const { t } = useLanguage();
@@ -104,7 +105,7 @@ export function Services() {
             >
               <div className="aspect-[4/3] w-full overflow-hidden relative">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10" />
-                <img 
+                <OptimizedImage 
                   src={service.image} 
                   alt={t(service.titleKey)} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

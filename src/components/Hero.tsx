@@ -3,17 +3,25 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { OptimizedImage } from './OptimizedImage';
 
 export function Hero() {
   const { t } = useLanguage();
 
   return (
     <section className="relative w-full h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/hero.png")' }}
-      >
+      {/* Background Image - Optimized */}
+      <div className="absolute inset-0 z-0">
+        <OptimizedImage
+          src="/images/hero.webp"
+          alt="Hero background"
+          priority={true}
+          className="w-full h-full"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+        />
         <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
       </div>

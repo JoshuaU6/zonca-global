@@ -2,6 +2,8 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
+import { OptimizedImage } from '../components/OptimizedImage';
+import { OptimizedVideo } from '../components/OptimizedVideo';
 
 const PRODUCTS = [
   { key: 'aluminum',     img: '/images/product-aluminum.webp' },
@@ -65,7 +67,7 @@ export default function Products() {
                 >
                   <div className="bg-card border border-border overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors">
                     <div className="aspect-[4/3] overflow-hidden border-b border-border">
-                      <img
+                      <OptimizedImage
                         src={product.img}
                         alt={t(`services.${product.key}.title` as any)}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -135,12 +137,11 @@ export default function Products() {
                 className="flex flex-col"
               >
                 <div className="w-full border border-border overflow-hidden bg-secondary" style={{ aspectRatio: '9/16', maxHeight: '520px' }}>
-                  <video
+                  <OptimizedVideo
                     src="/videos/zonca-video.mp4"
                     className="w-full h-full object-cover"
                     controls
                     playsInline
-                    preload="metadata"
                   />
                 </div>
                 <p className="mt-2 text-xs font-semibold text-foreground px-1">Fabrication & Installation</p>

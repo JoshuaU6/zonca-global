@@ -3,6 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Menu, X, Globe, ChevronDown, Sun, Moon } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import { OptimizedImage } from './OptimizedImage';
 
 const LANGUAGES = {
   en: { code: 'GB', name: 'English' },
@@ -92,11 +93,11 @@ export function Navbar() {
 
           {/* Logo — white logo on dark bg; transparent dark logo in light mode */}
           <Link href="/" className="flex-shrink-0">
-            <img
+            <OptimizedImage
               src={theme === 'dark' ? '/images/zonca-logo-dark.png' : '/images/zonca-logo-light-transparent.png'}
               alt="Zonca Global Investment Ltd"
+              priority={true}
               className="h-10 w-auto object-contain block transition-all duration-300"
-              fetchPriority="high"
             />
           </Link>
 

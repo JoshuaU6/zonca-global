@@ -3,6 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { useCountUp } from '../hooks/useCountUp';
 import { CheckCircle2, Shield, Wrench, Clock, Leaf, Users, Lightbulb } from 'lucide-react';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 export default function AboutUs() {
   const { t } = useLanguage();
@@ -85,7 +86,7 @@ export default function AboutUs() {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-primary/20 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 z-0" />
-                <img
+                <OptimizedImage
                   src="/images/our-story.jpg"
                   alt="Zonca Global Workshop"
                   className="relative z-10 w-full h-64 sm:h-80 md:h-[480px] object-cover border border-border"
@@ -171,7 +172,7 @@ export default function AboutUs() {
                   className="group relative overflow-hidden border border-border"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={svc.img}
                       alt={t(`services.${svc.key}.title` as any)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
