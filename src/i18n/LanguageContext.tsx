@@ -128,6 +128,13 @@ const translationMap: Record<Language, Record<string, string>> = {
 
     "projects.title": "Our Projects",
     "projects.subtitle": "Showcasing our excellence in architectural metal and glass",
+    "projects.gallery.label": "Commercial Interior & Exterior",
+    "projects.gallery.heading": "Mall Design by Zonca & Fargo",
+    "projects.gallery.location": "Tripoli, Libya",
+    "projects.gallery.description": "Explore our Tripoli mall project gallery with premium interior and exterior finishes.",
+    "projects.gallery.prompt": "Browse the full project story across the selected images.",
+    "projects.gallery.button": "View Full Gallery (87 photos)",
+    "projects.gallery.view_all": "View all photos",
 
     "projects.p1.title": "Commercial Office Complex",
     "projects.p1.category": "Glass Facade",
@@ -253,6 +260,13 @@ const translationMap: Record<Language, Record<string, string>> = {
 
     "projects.title": "Nos Projets",
     "projects.subtitle": "Mettre en valeur notre excellence en métal et verre architectural",
+    "projects.gallery.label": "Intérieur et Extérieur Commercial",
+    "projects.gallery.heading": "Mall Design par Zonca & Fargo",
+    "projects.gallery.location": "Tripoli, Libye",
+    "projects.gallery.description": "Découvrez notre galerie du projet de centre commercial de Tripoli avec des finitions intérieures et extérieures haut de gamme.",
+    "projects.gallery.prompt": "Parcourez l'histoire complète du projet à travers les images sélectionnées.",
+    "projects.gallery.button": "Afficher la galerie complète (87 photos)",
+    "projects.gallery.view_all": "Voir toutes les photos",
 
     "projects.p1.title": "Complexe de Bureaux Commercial",
     "projects.p1.category": "Façade en Verre",
@@ -378,6 +392,13 @@ const translationMap: Record<Language, Record<string, string>> = {
 
     "projects.title": "Projelerimiz",
     "projects.subtitle": "Mimari metal ve camdaki mükemmelliğimizi sergiliyoruz",
+    "projects.gallery.label": "Ticari İç ve Dış Mekan",
+    "projects.gallery.heading": "Zonca & Fargo Tarafından Alışveriş Merkezi Tasarımı",
+    "projects.gallery.location": "Trablus, Libya",
+    "projects.gallery.description": "Tripoli alışveriş merkezi projemizin iç ve dış mekan bitişlerini gösteren galeriyi keşfedin.",
+    "projects.gallery.prompt": "Seçilen görüntüler üzerinden projenin tamamını inceleyin.",
+    "projects.gallery.button": "Tam Galeriyi Görüntüle (87 fotoğraf)",
+    "projects.gallery.view_all": "Tüm fotoğrafları görüntüle",
 
     "projects.p1.title": "Ticari Ofis Kompleksi",
     "projects.p1.category": "Cam Cephe",

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { OptimizedImage } from '../components/OptimizedImage';
+import { GalleryLightbox } from '../components/GalleryLightbox';
+import { Button } from '../components/ui/button';
 
 export default function Projects() {
   const { t } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const projects = [
     { img: '/images/project-1.webp',                   titleKey: 'projects.p1.title', categoryKey: 'projects.p1.category', location: 'Lagos, Nigeria' },
@@ -108,6 +112,10 @@ export default function Projects() {
     '/images/projects/Tripoli/IMG-20260605-WA0100.jpg',
   ];
 
+  const galleryImages = tripoliImages.slice(0, 87);
+  const previewImages = galleryImages.slice(1, 4);
+  const remainingPreviewCount = galleryImages.length - 4;
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-grow pt-20 md:pt-24 pb-16 md:pb-20">
@@ -139,7 +147,121 @@ export default function Projects() {
           </div>
         </section>
 
-        {/* Grid */}
+        {/* Tripoli - Mall Design Gallery */}
+        <section className="py-10 md:py-20">
+          <div className="container px-4 md:px-6">
+            <div className="mb-8 text-center">
+              <p className="text-primary text-xs font-semibold uppercase tracking-[0.35em] mb-3">
+                {t('projects.gallery.label')}
+              </p>
+              <h2 className="text-3xl md:text-5xl font-bold">{t('projects.gallery.heading')}</h2>
+              <p className="text-muted-foreground mt-3">{t('projects.gallery.location')}</p>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-[1.7fr_1fr]">
+              <button
+                type="button"
+                onClick={() => {
+                  setLightboxIndex(0);
+                  setLightboxOpen(true);
+                }}
+                className="group relative overflow-hidden rounded-[2rem] border border-border bg-card text-left shadow-sm"
+              >
+                <div className="aspect-[4/3] md:aspect-[16/12] overflow-hidden">
+                  <OptimizedImage
+                    src={galleryImages[0]}
+                    alt={t('projects.gallery.heading')}
+                    priority
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-xs uppercase tracking-[0.35em] text-primary">
+                    {t('projects.gallery.label')}
+                  </p>
+                  <h3 className="mt-3 text-3xl md:text-5xl font-bold text-white">
+                    {t('projects.gallery.heading')}
+                  </h3>
+                  <p className="mt-3 max-w-xl text-sm md:text-base leading-6 text-white/80">
+                    {t('projects.gallery.description')}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <span className="rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm text-white">
+                      {t('projects.gallery.location')}
+                    </span>
+                    <span className="rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm text-white">
+                      {galleryImages.length} photos
+                    </span>
+                  </div>
+                </div>
+              </button>
+
+              <div className="grid grid-cols-2 gap-3">
+                {previewImages.map((src, index) => (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => {
+                      setLightboxIndex(index + 1);
+                      setLightboxOpen(true);
+                    }}
+                    className="group relative overflow-hidden rounded-3xl border border-border"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <OptimizedImage
+                        src={src}
+                        alt={`Tripoli preview ${index + 1}`}
+                        priority
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setLightboxIndex(4);
+                    setLightboxOpen(true);
+                  }}
+                  className="group relative overflow-hidden rounded-3xl border border-border"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <OptimizedImage
+                      src={galleryImages[4]}
+                      alt={t('projects.gallery.view_all')}
+                      priority
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                    <span className="text-4xl font-semibold text-white">+{remainingPreviewCount}</span>
+                    <span className="mt-2 text-sm uppercase tracking-[0.24em] text-white">
+                      {t('projects.gallery.view_all')}
+                    </span>
+                  </div>
+                </button>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                  {t('projects.gallery.prompt')}
+                </p>
+                <Button
+                  type="button"
+                  onClick={() => {
+                    setLightboxIndex(0);
+                    setLightboxOpen(true);
+                  }}
+                >
+                  {t('projects.gallery.button')}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-10 md:py-20">
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
@@ -159,9 +281,7 @@ export default function Projects() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  {/* Gradient always visible on mobile, enhanced on hover for desktop */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-                  {/* Text: always shown, just translates slightly on desktop hover */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 md:translate-y-2 md:group-hover:translate-y-0 transition-transform duration-300">
                     <div className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1.5">
                       {t(project.categoryKey)}
@@ -177,37 +297,14 @@ export default function Projects() {
           </div>
         </section>
 
-        {/* Tripoli - Mall Design Gallery */}
-        <section className="py-10 md:py-20">
-          <div className="container px-4 md:px-6">
-            <div className="mb-8 text-center">
-              <h2 className="text-2xl md:text-4xl font-bold">Mall Design by Zonca & Fargo in Tripoli, Libya</h2>
-              <p className="text-muted-foreground mt-2">A selection of images from the Tripoli mall project.</p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {tripoliImages.map((src, idx) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.01 }}
-                  className="overflow-hidden border border-border group"
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <OptimizedImage
-                      src={src}
-                      alt={`Mall Design Tripoli ${idx + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        <GalleryLightbox
+          images={galleryImages}
+          open={lightboxOpen}
+          initialIndex={lightboxIndex}
+          title={t('projects.gallery.heading')}
+          location={t('projects.gallery.location')}
+          onClose={() => setLightboxOpen(false)}
+        />
       </main>
     </div>
   );
