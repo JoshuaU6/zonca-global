@@ -1,4 +1,4 @@
-import React, { VideoHTMLAttributes } from 'react';
+import React, { VideoHTMLAttributes, useEffect, useRef } from 'react';
 
 interface OptimizedVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
@@ -20,20 +20,38 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   autoPlay = false,
   ...props
 }) => {
-  const extraAttrs: Record<string, string | undefined> = {};
-  if (playsInline) {
-    extraAttrs['webkit-playsinline'] = '';
-  }
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (playsInline) {
+      (video as any).webkitPlaysInline = true;
+      video.playsInline = true;
+    }
+
+    if (video.muted !== muted) video.muted = muted;
+
+    if (autoPlay && video.paused) {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // ignore autoplay block errors so they don't crash render
+        });
+      }
+    }
+  }, [autoPlay, muted, playsInline, src]);
 
   return (
     <video
+      ref={videoRef}
       src={src}
       preload="auto"
       muted={muted}
       autoPlay={autoPlay}
       loop={props.loop}
       playsInline={playsInline}
-      {...extraAttrs}
       {...props}
     />
   );
