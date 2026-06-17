@@ -15,13 +15,25 @@ interface OptimizedVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
 export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   src,
   priority = false,
+  muted = false,
+  playsInline = false,
+  autoPlay = false,
   ...props
 }) => {
+  const extraAttrs: Record<string, string | undefined> = {};
+  if (playsInline) {
+    extraAttrs['webkit-playsinline'] = '';
+  }
+
   return (
     <video
       src={src}
       preload="auto"
-      crossOrigin="anonymous"
+      muted={muted}
+      autoPlay={autoPlay}
+      loop={props.loop}
+      playsInline={playsInline}
+      {...extraAttrs}
       {...props}
     />
   );
