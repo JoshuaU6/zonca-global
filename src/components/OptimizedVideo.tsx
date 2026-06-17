@@ -10,6 +10,7 @@ interface OptimizedVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
  * - Lazy loading support
  * - Priority loading for critical videos
  * - Native browser video optimization
+ * - Mobile autoplay support with preload="auto"
  */
 export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   src,
@@ -19,7 +20,8 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   return (
     <video
       src={src}
-      preload={priority ? 'auto' : 'metadata'}
+      preload="auto"
+      crossOrigin="anonymous"
       {...props}
     />
   );
